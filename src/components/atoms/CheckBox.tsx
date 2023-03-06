@@ -5,7 +5,7 @@ type Props = {
   checked: boolean
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
-export const CheckButton = (props: Props) => {
+export const CheckBox = (props: Props) => {
   const { prefectureName, checked, onChange } = props
 
   return (
