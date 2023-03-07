@@ -7,5 +7,14 @@ type Props = {
 export const Header = (props: Props) => {
   const { title } = props
 
-  return <header>{title}</header>
+  return (
+    <header
+      style={{
+        width: '100%',
+        backgroundColor: '#ccc',
+      }}
+    >
+      {title}
+    </header>
+  )
 }
