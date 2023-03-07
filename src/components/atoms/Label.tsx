@@ -1,5 +1,5 @@
-import React from 'react'
+import React from 'react';
 
 export const Label = () => {
-  return <div>Label</div>
-}
+  return <div>Label</div>;
+};

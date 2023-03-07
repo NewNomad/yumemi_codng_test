@@ -1,6 +1,6 @@
-import React from 'react'
-import { CheckBox } from '../molecules/CheckBox'
+import React from 'react';
+import { CheckBox } from '../molecules/CheckBox';
 
 export const PrefectureSelection = () => {
-  return <CheckBox name="a" checked onChange={() => {}} />
-}
+  return <CheckBox name="a" checked onChange={() => {}} />;
+};

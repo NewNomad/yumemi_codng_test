@@ -1,6 +1,6 @@
-import { NextPage } from 'next'
-import { Header } from 'src/components/organisms/Header'
-import { PrefectureSelection } from 'src/components/organisms/PrefectureSelection'
+import { NextPage } from 'next';
+import { Header } from 'src/components/organisms/Header';
+import { PrefectureSelection } from 'src/components/organisms/PrefectureSelection';
 
 const Home: NextPage = () => {
   return (
@@ -8,7 +8,7 @@ const Home: NextPage = () => {
       <Header title="Title" />
       <PrefectureSelection />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

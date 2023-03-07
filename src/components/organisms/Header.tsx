@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 type Props = {
-  title: string
-}
+  title: string;
+};
 
 export const Header = (props: Props) => {
-  const { title } = props
+  const { title } = props;
 
   return (
     <header
@@ -22,5 +22,5 @@ export const Header = (props: Props) => {
     >
       {title}
     </header>
-  )
-}
+  );
+};
