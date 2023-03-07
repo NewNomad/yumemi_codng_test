@@ -3,7 +3,7 @@ import React from 'react';
 type Props = {
   name: string;
   checked: boolean;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: () => void;
 };
 export const CheckBox = (props: Props) => {
   const { name, checked, onChange } = props;

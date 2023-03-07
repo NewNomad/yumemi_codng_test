@@ -4,10 +4,11 @@ import { Prefecture } from 'src/types/prefectures';
 
 type Props = {
   prefectures: Prefecture[];
+  onChange: () => void;
 };
 
 export const PrefectureSelection = (props: Props) => {
-  const { prefectures } = props;
+  const { prefectures, onChange } = props;
 
   return (
     <>
@@ -15,8 +16,8 @@ export const PrefectureSelection = (props: Props) => {
         <CheckBox
           key={prefecture.prefCode}
           name={prefecture.prefName}
-          checked
-          onChange={() => {}}
+          checked={false}
+          onChange={onChange}
         />
       ))}
     </>
