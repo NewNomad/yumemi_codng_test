@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 type Props = {
-  title: string
-}
+  title: string;
+};
 
 export const Headline = (props: Props) => {
-  const { title } = props
+  const { title } = props;
 
-  return <h2>{title}</h2>
-}
+  return <h2>{title}</h2>;
+};
