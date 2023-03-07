@@ -11,7 +11,13 @@ export const Header = (props: Props) => {
     <header
       style={{
         width: '100%',
+        height: 50,
         backgroundColor: '#ccc',
+        fontSize: 40,
+        textAlign: 'center',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
     >
       {title}
