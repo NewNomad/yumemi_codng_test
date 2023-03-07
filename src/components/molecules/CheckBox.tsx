@@ -1,17 +1,17 @@
 import React from 'react'
 
 type Props = {
-  prefectureName: string
+  name: string
   checked: boolean
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 export const CheckBox = (props: Props) => {
-  const { prefectureName, checked, onChange } = props
+  const { name, checked, onChange } = props
 
   return (
     <label>
       <input type="checkbox" onChange={onChange} checked={checked} />
-      {prefectureName}
+      {name}
     </label>
   )
 }
