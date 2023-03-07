@@ -1,5 +1,11 @@
 import React from 'react'
 
-export const Header = () => {
-  return <div>Header</div>
+type Props = {
+  title: string
+}
+
+export const Header = (props: Props) => {
+  const { title } = props
+
+  return <header>{title}</header>
 }
