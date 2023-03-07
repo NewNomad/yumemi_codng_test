@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import { useState } from 'react';
-import { Header } from 'src/components/organisms/Header';
+import { Header } from 'src/components/atoms/Header';
 import { PrefectureSelection } from 'src/components/organisms/PrefectureSelection';
 import { Prefectures } from 'src/types/prefectures';
 import useSWR from 'swr';
