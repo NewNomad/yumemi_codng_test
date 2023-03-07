@@ -11,7 +11,7 @@ export const CheckBox = (props: Props) => {
   return (
     <label>
       <input type="checkbox" onChange={onChange} checked={checked} />
-      {name}
+      <span>{name}</span>
     </label>
   );
 };
