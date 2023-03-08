@@ -3,7 +3,7 @@ import { Prefecture, Prefectures } from 'src/types/prefectures';
 
 export const usePrefectures = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [prefectures, setPrefectures] = useState<Prefecture[]>();
+  const [prefectures, setPrefectures] = useState<Prefecture[]>([]);
 
   const getPrefectures = useCallback(async () => {
     setIsLoading(true);
@@ -11,8 +11,12 @@ export const usePrefectures = () => {
       const result: Prefectures = await (
         await fetch('/api/prefectures')
       ).json();
+      // これにischeckedは含まれていない
       const prefectures = result.result;
-      setPrefectures(prefectures);
+      // ischeckedにfalseを入れてsetする
+      setPrefectures(
+        prefectures.map((prefecture) => ({ ...prefecture, checked: false })),
+      );
     } catch (error) {
       console.error(error);
     }

@@ -11,7 +11,10 @@ const Home: NextPage = () => {
   const { isLoading, prefectures, setPrefectures, getPrefectures } =
     usePrefectures();
 
-  // useEffect(() => getPregectures)
+  useEffect(() => {
+    (async () => getPrefectures())();
+  }, []);
+  console.log(prefectures);
 
   const handlePrefectureSelection = async () => {
     try {
@@ -26,10 +29,10 @@ const Home: NextPage = () => {
   return (
     <>
       <Layout title="Title" />
-      {/* <PrefectureSelection
+      <PrefectureSelection
         prefectures={prefectures}
         onChange={handlePrefectureSelection}
-      /> */}
+      />
     </>
   );
 };
