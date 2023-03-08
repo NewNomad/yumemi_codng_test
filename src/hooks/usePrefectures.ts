@@ -14,10 +14,10 @@ export const usePrefectures = () => {
         await fetch('/api/prefectures')
       ).json();
       // これにischeckedは含まれていない
-      const prefectures = result.result;
+      const fetchprefectures = result.result;
       // ischeckedにfalseを入れてsetする
       setPrefectures(
-        prefectures.map((prefecture) => ({ ...prefecture, checked: false })),
+        fetchprefectures.map((pref) => ({ ...pref, checked: false })),
       );
     } catch (error) {
       console.error(error);

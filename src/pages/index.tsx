@@ -30,7 +30,7 @@ const Home: NextPage = () => {
   // チェックボックスクリック時の処理
   const handleCheckBox = async (prefecture: Prefecture) => {
     setPrefCheckBox(prefecture);
-    getCompositions();
+    getCompositions(prefecture.prefName);
   };
 
   if (isLoading) return <div>ロード中</div>;

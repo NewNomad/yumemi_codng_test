@@ -1,14 +1,17 @@
 import React, { useCallback, useState } from 'react';
 import { Compositions } from 'src/types/api/compositions';
 import { Prefecture, Prefectures } from 'src/types/api/prefectures';
+import { chartComposition } from 'src/types/chartComposition';
 
 // 人口推移用フック
 export const useCompositions = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [compositions, setCompositions] = useState<any[]>([]);
+  const [chartComposition, setChartComposition] = useState<chartComposition[]>(
+    [],
+  );
 
   // 都道府県別の人口一覧を取ってくる
-  const getCompositions = useCallback(async () => {
+  const getCompositions = useCallback(async (prefectureName: string) => {
     setIsLoading(true);
     try {
       const result: Compositions = await // 念の為エスケープ処理入れる
@@ -17,17 +20,18 @@ export const useCompositions = () => {
       ).json();
       // データ内の総人口のみをとる
       const composition = result.result.data[0];
-      // ischeckedにfalseを入れてsetする
-      console.log(composition);
+      // setする用のデータを作る
+      const createdComposition: chartComposition = {
+        prefectureName: prefectureName,
+        data: composition,
+      };
 
-      // setCompositions(
-      //   prefectures.map((prefecture) => ({ ...prefecture, checked: false })),
-      // );
+      setChartComposition([...chartComposition, createdComposition]);
     } catch (error) {
       console.error(error);
     }
     setIsLoading(false);
   }, []);
 
-  return { isLoading, compositions, getCompositions };
+  return { isLoading, chartComposition, getCompositions };
 };
