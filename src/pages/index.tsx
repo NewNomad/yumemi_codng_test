@@ -25,6 +25,7 @@ const Home: NextPage = () => {
   }, []);
   console.log(prefectures);
 
+  // チェックボックスクリック時の処理
   const handleCheckBox = async (prefecture: Prefecture) => {
     setPrefCheckBox(prefecture);
   };
