@@ -23,7 +23,6 @@ const Home: NextPage = () => {
   useEffect(() => {
     (async () => getPrefectures())();
   }, []);
-  console.log(prefectures);
 
   // チェックボックスクリック時の処理
   const handleCheckBox = async (prefecture: Prefecture) => {
