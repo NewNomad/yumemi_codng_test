@@ -8,7 +8,8 @@ import { usePrefectures } from 'src/hooks/usePrefectures';
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const Home: NextPage = () => {
-  const { isLoading } = usePrefectures();
+  const { isLoading, prefectures, setPrefectures, getPrefectures } =
+    usePrefectures();
 
   // useEffect(() => getPregectures)
 
