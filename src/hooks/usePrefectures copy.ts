@@ -1,12 +1,12 @@
 import React, { useCallback, useState } from 'react';
 import { Prefecture, Prefectures } from 'src/types/prefectures';
 
-// 都道府県一覧用フック
+// 人口推移用フック
 export const usePrefectures = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [prefectures, setPrefectures] = useState<Prefecture[]>([]);
+  const [compositions, setCompositions] = useState<any[]>([]);
 
-  // 都道府県一覧を取ってくる
+  // 都道府県別の人口一覧を取ってくる
   const getPrefectures = useCallback(async () => {
     setIsLoading(true);
     try {
@@ -16,7 +16,7 @@ export const usePrefectures = () => {
       // これにischeckedは含まれていない
       const prefectures = result.result;
       // ischeckedにfalseを入れてsetする
-      setPrefectures(
+      setCompositions(
         prefectures.map((prefecture) => ({ ...prefecture, checked: false })),
       );
     } catch (error) {
@@ -25,16 +25,5 @@ export const usePrefectures = () => {
     setIsLoading(false);
   }, []);
 
-  //   都道府県checkboxのprefectureのischeckedの値をトグルさせる
-  const setPrefCheckBox = (prefecture: Prefecture) => {
-    setPrefectures(
-      prefectures.map((val) => {
-        // prefectures内のprefectureのみのischeckedをトグルさせる
-        if (val == prefecture) return { ...val, checked: !val.checked };
-        return val;
-      }),
-    );
-  };
-
-  return { isLoading, prefectures, setPrefCheckBox, getPrefectures };
+  // return { isLoading, prefectures, setPrefCheckBox, getPrefectures };
 };
