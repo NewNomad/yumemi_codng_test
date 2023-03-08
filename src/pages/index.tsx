@@ -21,7 +21,7 @@ const Home: NextPage = () => {
   const { isLoading, prefectures, setPrefCheckBox, getPrefectures } =
     usePrefectures();
 
-  const { chartComposition, addChartCompositions } = useCompositions();
+  const { chartComposition, toggleChartComposition } = useCompositions();
 
   useEffect(() => {
     (async () => getPrefectures())();
@@ -29,8 +29,8 @@ const Home: NextPage = () => {
 
   // チェックボックスクリック時の処理
   const handleCheckBox = async (prefecture: Prefecture) => {
+    toggleChartComposition(prefecture);
     setPrefCheckBox(prefecture);
-    addChartCompositions(prefecture.prefName);
   };
   console.log(chartComposition);
 
