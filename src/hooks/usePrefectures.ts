@@ -5,6 +5,7 @@ export const usePrefectures = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [prefectures, setPrefectures] = useState<Prefecture[]>([]);
 
+  // 都道府県一覧を取ってくる
   const getPrefectures = useCallback(async () => {
     setIsLoading(true);
     try {
