@@ -5,6 +5,7 @@ import { Layout } from 'src/components/organisms/Layout';
 import { PrefectureSelection } from 'src/components/organisms/PrefectureSelection';
 import { Prefecture, Prefectures } from 'src/types/prefectures';
 import { usePrefectures } from 'src/hooks/usePrefectures';
+import { useCompositions } from 'src/hooks/useCompositions';
 // Recharts.jsはCSRしないとhydrationエラーが出る
 const PrefectureChart = dynamic<Record<string, unknown>>(
   () =>
@@ -20,6 +21,8 @@ const Home: NextPage = () => {
   const { isLoading, prefectures, setPrefCheckBox, getPrefectures } =
     usePrefectures();
 
+  const { getCompositions } = useCompositions();
+
   useEffect(() => {
     (async () => getPrefectures())();
   }, []);
@@ -27,6 +30,7 @@ const Home: NextPage = () => {
   // チェックボックスクリック時の処理
   const handleCheckBox = async (prefecture: Prefecture) => {
     setPrefCheckBox(prefecture);
+    getCompositions();
   };
 
   if (isLoading) return <div>ロード中</div>;
