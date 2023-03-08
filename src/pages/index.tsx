@@ -21,7 +21,7 @@ const Home: NextPage = () => {
   const { isLoading, prefectures, setPrefCheckBox, getPrefectures } =
     usePrefectures();
 
-  const { getCompositions } = useCompositions();
+  const { addChartCompositions } = useCompositions();
 
   useEffect(() => {
     (async () => getPrefectures())();
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
   // チェックボックスクリック時の処理
   const handleCheckBox = async (prefecture: Prefecture) => {
     setPrefCheckBox(prefecture);
-    getCompositions(prefecture.prefName);
+    addChartCompositions(prefecture.prefName);
   };
 
   if (isLoading) return <div>ロード中</div>;

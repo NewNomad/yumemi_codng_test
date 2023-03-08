@@ -10,8 +10,8 @@ export const useCompositions = () => {
     [],
   );
 
-  // 都道府県別の人口一覧を取ってくる
-  const getCompositions = useCallback(async (prefectureName: string) => {
+  // 都道府県別の人口情報を追加
+  const addChartCompositions = async (prefectureName: string) => {
     setIsLoading(true);
     try {
       const result: Compositions = await // 念の為エスケープ処理入れる
@@ -25,13 +25,36 @@ export const useCompositions = () => {
         prefectureName: prefectureName,
         data: composition,
       };
-
       setChartComposition([...chartComposition, createdComposition]);
     } catch (error) {
       console.error(error);
     }
-    setIsLoading(false);
-  }, []);
 
-  return { isLoading, chartComposition, getCompositions };
+    setIsLoading(false);
+  };
+
+  // 都道府県別の人口情報を削除
+  const removeChartCompositions = async (prefectureName: string) => {
+    setIsLoading(true);
+    try {
+      const result: Compositions = await // 念の為エスケープ処理入れる
+      (
+        await fetch(`/api/composition?prefCode=${encodeURIComponent(3)}`)
+      ).json();
+      // データ内の総人口のみをとる
+      const composition = result.result.data[0];
+      // setする用のデータを作る
+      const createdComposition: chartComposition = {
+        prefectureName: prefectureName,
+        data: composition,
+      };
+      setChartComposition([...chartComposition, createdComposition]);
+    } catch (error) {
+      console.error(error);
+    }
+
+    setIsLoading(false);
+  };
+
+  return { isLoading, chartComposition, addChartCompositions };
 };
