@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react';
+import { Compositions } from 'src/types/compositions';
 import { Prefecture, Prefectures } from 'src/types/prefectures';
 
 // 人口推移用フック
@@ -10,12 +11,12 @@ export const useCompositions = () => {
   const getCompositions = useCallback(async () => {
     setIsLoading(true);
     try {
-      const result: Prefectures = await // 念の為エスケープ処理入れる
+      const result: Compositions = await // 念の為エスケープ処理入れる
       (
         await fetch(`/api/composition?prefCode=${encodeURIComponent(3)}`)
       ).json();
-      // これにischeckedは含まれていない
-      const compositions = result.result;
+      // 総人口のみをとる
+      const composition = result.result[0];
       // ischeckedにfalseを入れてsetする
       console.log(result);
 
