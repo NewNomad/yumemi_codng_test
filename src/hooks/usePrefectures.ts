@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { Prefecture, Prefectures } from 'src/types/prefectures';
 
-export const usePrefectures = async () => {
+export const usePrefectures = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [prefectures, setPrefectures] = useState<Prefecture[]>();
 
