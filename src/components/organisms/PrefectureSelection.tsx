@@ -16,7 +16,7 @@ export const PrefectureSelection = (props: Props) => {
         <CheckBox
           key={prefecture.prefCode}
           name={prefecture.prefName}
-          checked={false}
+          checked={prefecture.checked!}
           onChange={onChange}
         />
       ))}
