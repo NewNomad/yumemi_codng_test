@@ -2,6 +2,7 @@ import React from 'react';
 import {
   CartesianGrid,
   Label,
+  Legend,
   LineChart,
   Tooltip,
   XAxis,
@@ -16,17 +17,16 @@ export const PrefectureChart = () => {
         height={300}
         // data={}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        {/* <XAxis dataKey="年度" label={{ value: "aaa", offset: -5, position: "insideBottomRight" }} xlinkShow='' /> */}
+        <CartesianGrid strokeDasharray={3} />
         <XAxis>
-          {/* <Label value="年度" position="insideBottomRight" /> */}
+          <Label value="年度" position="bottom" />
         </XAxis>
         <YAxis>
           <Label value="人口数" position="insideTopLeft" />
         </YAxis>
+        <Legend verticalAlign="top" />
         <Tooltip />
       </LineChart>
-      ;
     </section>
   );
 };
