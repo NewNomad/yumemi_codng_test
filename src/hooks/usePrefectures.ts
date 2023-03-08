@@ -24,7 +24,7 @@ export const usePrefectures = () => {
     setIsLoading(false);
   }, []);
 
-  //   都道府県checkboxのprefectureの値をトグルさせる
+  //   都道府県checkboxのprefectureのischeckedの値をトグルさせる
   const setPrefCheckBox = (prefecture: Prefecture) => {
     setPrefectures(
       prefectures.map((val) => {
