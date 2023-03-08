@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { Prefecture, Prefectures } from 'src/types/api/prefectures';
 
-// 都道府県一覧用フック
 export const usePrefectures = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [prefectures, setPrefectures] = useState<Prefecture[]>([]);
@@ -13,9 +12,7 @@ export const usePrefectures = () => {
       const result: Prefectures = await (
         await fetch('/api/prefectures')
       ).json();
-      // これにischeckedは含まれていない
       const fetchprefectures = result.result;
-      // ischeckedにfalseを入れてsetする
       setPrefectures(
         fetchprefectures.map((pref) => ({ ...pref, checked: false })),
       );

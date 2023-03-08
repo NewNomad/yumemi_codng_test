@@ -3,7 +3,6 @@ import { Compositions } from 'src/types/api/compositions';
 import { Prefecture } from 'src/types/api/prefectures';
 import { chartComposition } from 'src/types/chartComposition';
 
-// 人口推移用フック
 export const useCompositions = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [chartComposition, setChartComposition] = useState<chartComposition[]>(
@@ -50,7 +49,6 @@ export const useCompositions = () => {
   // checkboxのon/offで切り替える
   const toggleChartComposition = useCallback(
     (prefecture: Prefecture) => {
-      // checkedがtrueならば削除、falseならば追加を行う
       prefecture.checked === true
         ? removeChartCompositions(prefecture.prefName)
         : addChartCompositions(prefecture.prefName);

@@ -6,7 +6,6 @@ import { PrefectureSelection } from 'src/components/organisms/PrefectureSelectio
 import { Prefecture, Prefectures } from 'src/types/api/prefectures';
 import { usePrefectures } from 'src/hooks/usePrefectures';
 import { useCompositions } from 'src/hooks/useCompositions';
-// Recharts.jsはCSRしないとhydrationエラーが出る
 const PrefectureChart = dynamic<Record<string, unknown>>(
   () =>
     import('../components/organisms/PrefectureChart').then(

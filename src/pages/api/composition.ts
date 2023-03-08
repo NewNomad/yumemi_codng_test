@@ -3,7 +3,6 @@ import type { NextApiHandler } from 'next';
 const handler: NextApiHandler = async (req, res) => {
   const apiKey = process.env.RESAS_API_KEY;
   const prefCode = req.query.prefCode;
-  // 該当する環境変数がなければエラーを返す
   if (!apiKey) {
     throw new Error('RESAS_API_KEY is not defined');
   }
