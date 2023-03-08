@@ -5,7 +5,7 @@ type Props = {
   checked: boolean;
   onChange: () => void;
 };
-export const CheckBox = (props: Props) => {
+export const CheckBox = React.memo((props: Props) => {
   const { name, checked, onChange } = props;
 
   return (
@@ -14,4 +14,6 @@ export const CheckBox = (props: Props) => {
       <span>{name}</span>
     </label>
   );
-};
+});
+
+CheckBox.displayName = 'CheckBox';

@@ -8,7 +8,7 @@ type Props = {
   onChange: (value: Prefecture) => void;
 };
 
-export const PrefectureSelection = (props: Props) => {
+export const PrefectureSelection = React.memo((props: Props) => {
   const { prefectures, onChange } = props;
 
   return (
@@ -24,4 +24,6 @@ export const PrefectureSelection = (props: Props) => {
       ))}
     </section>
   );
-};
+});
+
+PrefectureSelection.displayName = 'PrefectureSelection';

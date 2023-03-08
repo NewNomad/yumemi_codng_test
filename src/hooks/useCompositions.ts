@@ -25,7 +25,7 @@ export const useCompositions = () => {
         prefectureName: prefectureName,
         data: composition,
       };
-      setChartComposition([...chartComposition, createdComposition]);
+      setChartComposition((prev) => [...prev, createdComposition]);
     } catch (error) {
       console.error(error);
     }
@@ -48,7 +48,8 @@ export const useCompositions = () => {
         prefectureName: prefectureName,
         data: composition,
       };
-      setChartComposition([...chartComposition, createdComposition]);
+      setChartComposition((prev) => [...prev, createdComposition]);
+      console.log(chartComposition);
     } catch (error) {
       console.error(error);
     }
