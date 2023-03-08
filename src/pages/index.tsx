@@ -4,6 +4,7 @@ import { Layout } from 'src/components/organisms/Layout';
 import { PrefectureSelection } from 'src/components/organisms/PrefectureSelection';
 import { Prefecture, Prefectures } from 'src/types/prefectures';
 import { usePrefectures } from 'src/hooks/usePrefectures';
+import { PrefectureChart } from 'src/components/organisms/PrefectureChart';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -30,6 +31,7 @@ const Home: NextPage = () => {
         prefectures={prefectures}
         onChange={handleCheckBox}
       />
+      <PrefectureChart />
     </>
   );
 };
