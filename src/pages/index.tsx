@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { Layout } from 'src/components/organisms/Layout';
 import { PrefectureSelection } from 'src/components/organisms/PrefectureSelection';
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
   // チェックボックスクリック時の処理
   const handleCheckBox = async (prefecture: Prefecture) => {
     setPrefCheckBox(prefecture);
-    await addChartCompositions(prefecture.prefName);
+    addChartCompositions(prefecture.prefName);
   };
   console.log(chartComposition);
 
