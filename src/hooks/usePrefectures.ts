@@ -24,5 +24,15 @@ export const usePrefectures = () => {
     setIsLoading(false);
   }, []);
 
-  return { isLoading, prefectures, setPrefectures, getPrefectures };
+  const setPrefCheckBox = (prefecture: Prefecture) => {
+    setPrefectures(
+      prefectures.map((val) => {
+        // prefectures内のprefectureのみのischeckedをトグルさせる
+        if (val == prefecture) return { ...val, checked: !val.checked };
+        return val;
+      }),
+    );
+  };
+
+  return { isLoading, prefectures, setPrefCheckBox, getPrefectures };
 };

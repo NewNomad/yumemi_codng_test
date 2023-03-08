@@ -4,7 +4,7 @@ import { Prefecture } from 'src/types/prefectures';
 
 type Props = {
   prefectures: Prefecture[];
-  onChange: () => void;
+  onChange: (value: Prefecture) => void;
 };
 
 export const PrefectureSelection = (props: Props) => {
@@ -17,7 +17,7 @@ export const PrefectureSelection = (props: Props) => {
           key={prefecture.prefCode}
           name={prefecture.prefName}
           checked={prefecture.checked!}
-          onChange={onChange}
+          onChange={() => onChange(prefecture)}
         />
       ))}
     </section>
