@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { Prefecture, Prefectures } from 'src/types/prefectures';
+import { Prefecture, Prefectures } from 'src/types/api/prefectures';
 
 // 都道府県一覧用フック
 export const usePrefectures = () => {

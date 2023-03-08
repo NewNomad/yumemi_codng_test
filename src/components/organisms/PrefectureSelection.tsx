@@ -1,6 +1,6 @@
 import React from 'react';
 import { CheckBox } from '../molecules/CheckBox';
-import { Prefecture } from 'src/types/prefectures';
+import { Prefecture } from 'src/types/api/prefectures';
 import { Headline } from '../atoms/Headline';
 
 type Props = {

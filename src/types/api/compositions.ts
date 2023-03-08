@@ -11,5 +11,8 @@ export type Composition = {
 
 export type Compositions = {
   message: string | null;
-  result: Composition[];
+  result: {
+    boundaryYear: number;
+    data: Composition[];
+  };
 };

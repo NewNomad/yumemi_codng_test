@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import { Compositions } from 'src/types/compositions';
-import { Prefecture, Prefectures } from 'src/types/prefectures';
+import { Compositions } from 'src/types/api/compositions';
+import { Prefecture, Prefectures } from 'src/types/api/prefectures';
 
 // 人口推移用フック
 export const useCompositions = () => {
@@ -15,10 +15,10 @@ export const useCompositions = () => {
       (
         await fetch(`/api/composition?prefCode=${encodeURIComponent(3)}`)
       ).json();
-      // 総人口のみをとる
-      const composition = result.result[0];
+      // データ内の総人口のみをとる
+      const composition = result.result.data[0];
       // ischeckedにfalseを入れてsetする
-      console.log(result);
+      console.log(composition);
 
       // setCompositions(
       //   prefectures.map((prefecture) => ({ ...prefecture, checked: false })),

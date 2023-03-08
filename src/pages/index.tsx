@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Layout } from 'src/components/organisms/Layout';
 import { PrefectureSelection } from 'src/components/organisms/PrefectureSelection';
-import { Prefecture, Prefectures } from 'src/types/prefectures';
+import { Prefecture, Prefectures } from 'src/types/api/prefectures';
 import { usePrefectures } from 'src/hooks/usePrefectures';
 import { useCompositions } from 'src/hooks/useCompositions';
 // Recharts.jsはCSRしないとhydrationエラーが出る
