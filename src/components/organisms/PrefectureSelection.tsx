@@ -11,7 +11,7 @@ export const PrefectureSelection = (props: Props) => {
   const { prefectures, onChange } = props;
 
   return (
-    <>
+    <section>
       {prefectures.map((prefecture) => (
         <CheckBox
           key={prefecture.prefCode}
@@ -20,6 +20,6 @@ export const PrefectureSelection = (props: Props) => {
           onChange={onChange}
         />
       ))}
-    </>
+    </section>
   );
 };
