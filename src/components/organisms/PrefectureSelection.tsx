@@ -1,6 +1,7 @@
 import React from 'react';
 import { CheckBox } from '../molecules/CheckBox';
 import { Prefecture } from 'src/types/prefectures';
+import { Headline } from '../atoms/Headline';
 
 type Props = {
   prefectures: Prefecture[];
@@ -12,6 +13,7 @@ export const PrefectureSelection = (props: Props) => {
 
   return (
     <section>
+      <Headline title="都道府県" />
       {prefectures.map((prefecture) => (
         <CheckBox
           key={prefecture.prefCode}
