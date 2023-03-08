@@ -1,10 +1,18 @@
 import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { Layout } from 'src/components/organisms/Layout';
 import { PrefectureSelection } from 'src/components/organisms/PrefectureSelection';
 import { Prefecture, Prefectures } from 'src/types/prefectures';
 import { usePrefectures } from 'src/hooks/usePrefectures';
-import { PrefectureChart } from 'src/components/organisms/PrefectureChart';
+// Recharts.jsはCSRしないとhydrationエラーが出る
+const PrefectureChart = dynamic<Record<string, unknown>>(
+  () =>
+    import('../components/organisms/PrefectureChart').then(
+      (module) => module.PrefectureChart,
+    ),
+  { ssr: false },
+);
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
