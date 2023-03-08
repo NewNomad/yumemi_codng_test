@@ -19,5 +19,5 @@ export const usePrefectures = async () => {
     setIsLoading(false);
   }, []);
 
-  return { isLoading, prefectures, setPrefectures };
+  return { isLoading, prefectures, setPrefectures, getPrefectures };
 };
