@@ -15,8 +15,6 @@ const PrefectureChartWrapper = dynamic(
   { ssr: false },
 );
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
-
 const Home: NextPage = () => {
   const { isLoading, prefectures, setPrefCheckBox, getPrefectures } =
     usePrefectures();
