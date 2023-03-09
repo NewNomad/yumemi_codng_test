@@ -10,17 +10,23 @@ export const useCompositions = () => {
 
   // 都道府県別の人口情報を追加
   const addChartCompositions = useCallback(
-    async (prefectureName: string) => {
+    async (prefecture: Prefecture) => {
       try {
         const result: Compositions = await // 念の為エスケープ処理入れる
         (
-          await fetch(`/api/composition?prefCode=${encodeURIComponent(3)}`)
+          await fetch(
+            `/api/composition?prefCode=${encodeURIComponent(
+              prefecture.prefCode,
+            )}`,
+          )
         ).json();
         // データ内の総人口のみをとる
         const composition = result.result.data[0];
+        console.log(composition);
+
         // setする用のデータを作る
         const createdComposition: chartComposition = {
-          prefectureName: prefectureName,
+          prefectureName: prefecture.prefName,
           data: composition,
         };
         setChartComposition((prev) => [...prev, createdComposition]);
@@ -47,7 +53,7 @@ export const useCompositions = () => {
     (prefecture: Prefecture) => {
       prefecture.checked === true
         ? removeChartCompositions(prefecture.prefName)
-        : addChartCompositions(prefecture.prefName);
+        : addChartCompositions(prefecture);
     },
     [chartComposition],
   );

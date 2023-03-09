@@ -18,7 +18,7 @@ type Props = {
 export const PrefectureChart = (props: Props) => {
   const { chartComposition } = props;
 
-  console.log(chartComposition);
+  // console.log(chartComposition);
 
   if (!chartComposition[0]) return <></>;
 
