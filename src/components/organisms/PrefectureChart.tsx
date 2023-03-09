@@ -8,8 +8,15 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+import { chartComposition } from 'src/types/chartComposition';
 
-export const PrefectureChart = () => {
+type Props = {
+  chartComposition: chartComposition[];
+};
+
+export const PrefectureChart: React.FC<Props> = (props: Props) => {
+  const { chartComposition } = props;
+
   return (
     <section>
       <LineChart

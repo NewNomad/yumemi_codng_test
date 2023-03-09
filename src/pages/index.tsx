@@ -6,7 +6,8 @@ import { PrefectureSelection } from 'src/components/organisms/PrefectureSelectio
 import { Prefecture, Prefectures } from 'src/types/api/prefectures';
 import { usePrefectures } from 'src/hooks/usePrefectures';
 import { useCompositions } from 'src/hooks/useCompositions';
-const PrefectureChart = dynamic<Record<string, unknown>>(
+import { PrefectureChart } from 'src/components/organisms/PrefectureChart';
+const PrefectureChartWrapper = dynamic(
   () =>
     import('../components/organisms/PrefectureChart').then(
       (module) => module.PrefectureChart,
@@ -43,7 +44,7 @@ const Home: NextPage = () => {
         prefectures={prefectures}
         onChange={handleCheckBox}
       />
-      <PrefectureChart />
+      <PrefectureChartWrapper chartComposition={chartComposition} />
     </>
   );
 };
