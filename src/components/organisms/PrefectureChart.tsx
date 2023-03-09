@@ -22,7 +22,7 @@ export const PrefectureChart = (props: Props) => {
 
   return (
     <Section>
-      <ResponsiveContainer width="80%" height={400}>
+      <ResponsiveContainer width="100%" height={400}>
         <LineChart margin={{ top: 50, left: 30, right: 30, bottom: 50 }}>
           <CartesianGrid strokeDasharray={3} />
           <XAxis

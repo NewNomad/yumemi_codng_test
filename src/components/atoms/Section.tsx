@@ -11,5 +11,6 @@ export const Section = (props: Props) => {
 };
 
 const SSection: React.CSSProperties = {
-  width: 700,
+  width: 1000,
+  margin: '0 auto',
 };
