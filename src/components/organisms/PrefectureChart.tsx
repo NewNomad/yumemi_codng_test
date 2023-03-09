@@ -18,8 +18,6 @@ type Props = {
 export const PrefectureChart = (props: Props) => {
   const { chartComposition } = props;
 
-  // console.log(chartComposition);
-
   if (!chartComposition[0]) return <></>;
 
   return (
@@ -36,10 +34,10 @@ export const PrefectureChart = (props: Props) => {
           axisLine={true}
           allowDuplicatedCategory={false}
         >
-          <Label value="年度" position="insideBottomRight" />
+          <Label value="年度" position="insideBottomRight" offset={-15} />
         </XAxis>
         <YAxis>
-          <Label value="人口数" position="insideTopLeft" />
+          <Label value="人口数" position="insideTopLeft" offset={-30} />
         </YAxis>
         {chartComposition.map((comp, i) => (
           <Line
