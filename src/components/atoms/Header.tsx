@@ -7,20 +7,16 @@ type Props = {
 export const Header = (props: Props) => {
   const { title } = props;
 
-  return (
-    <header
-      style={{
-        width: '100%',
-        height: 50,
-        backgroundColor: '#ccc',
-        fontSize: 40,
-        textAlign: 'center',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      {title}
-    </header>
-  );
+  return <header style={Sheader}>{title}</header>;
+};
+
+const Sheader: React.CSSProperties = {
+  width: '100%',
+  height: 50,
+  backgroundColor: '#ccc',
+  fontSize: 40,
+  textAlign: 'center',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
 };
