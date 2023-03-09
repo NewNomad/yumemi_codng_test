@@ -11,6 +11,21 @@ export const Section = (props: Props) => {
 };
 
 const SSection: React.CSSProperties = {
-  width: 1000,
+  width: '100%',
   margin: '0 auto',
+  maxWidth: 768,
+  padding: 16,
+};
+
+const mediaQuery = '@media screen and (max-width: 768px)';
+
+const responsiveSSection: React.CSSProperties = {
+  ...SSection,
+  maxWidth: '100%',
+};
+
+const responsiveStyles = {
+  [mediaQuery]: {
+    section: responsiveSSection,
+  },
 };

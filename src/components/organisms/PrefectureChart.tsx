@@ -22,18 +22,19 @@ export const PrefectureChart = (props: Props) => {
 
   return (
     <Section>
-      <ResponsiveContainer width="100%" height={400}>
-        <LineChart margin={{ top: 50, left: 30, right: 30, bottom: 50 }}>
+      <ResponsiveContainer width="100%" height={300}>
+        <LineChart margin={{ top: 50, left: 30, right: 20, bottom: 50 }}>
           <CartesianGrid strokeDasharray={3} />
           <XAxis
             dataKey="year"
             tickLine={false}
             axisLine={true}
             allowDuplicatedCategory={false}
+            fontSize={10}
           >
             <Label value="年度" position="insideBottomRight" offset={-15} />
           </XAxis>
-          <YAxis>
+          <YAxis fontSize={10}>
             <Label value="人口数" position="insideTopLeft" offset={-30} />
           </YAxis>
           {chartComposition[0] &&
