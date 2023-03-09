@@ -2,6 +2,7 @@ import React from 'react';
 import { CheckBox } from '../molecules/CheckBox';
 import { Prefecture } from 'src/types/api/prefectures';
 import { Headline } from '../atoms/Headline';
+import { Section } from '../atoms/Section';
 
 type Props = {
   prefectures: Prefecture[];
@@ -12,7 +13,7 @@ export const PrefectureSelection = React.memo((props: Props) => {
   const { prefectures, onChange } = props;
 
   return (
-    <section>
+    <Section>
       <Headline title="都道府県" />
       {prefectures.map((prefecture) => (
         <CheckBox
@@ -22,7 +23,7 @@ export const PrefectureSelection = React.memo((props: Props) => {
           onChange={() => onChange(prefecture)}
         />
       ))}
-    </section>
+    </Section>
   );
 });
 
