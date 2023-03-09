@@ -11,21 +11,6 @@ export const CheckBoxContainer = (props: Props) => {
 };
 
 const SDiv: React.CSSProperties = {
-  width: '100%',
-  margin: '0 auto',
-  maxWidth: 768,
-  padding: 16,
-};
-
-const mediaQuery = '@media screen and (max-width: 768px)';
-
-const responsiveSDiv: React.CSSProperties = {
-  ...SDiv,
-  maxWidth: '100%',
-};
-
-const responsiveStyles = {
-  [mediaQuery]: {
-    section: responsiveSDiv,
-  },
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))',
 };
