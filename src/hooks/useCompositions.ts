@@ -4,7 +4,6 @@ import { Prefecture } from 'src/types/api/prefectures';
 import { chartComposition } from 'src/types/chartComposition';
 
 export const useCompositions = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [chartComposition, setChartComposition] = useState<chartComposition[]>(
     [],
   );
@@ -12,7 +11,6 @@ export const useCompositions = () => {
   // 都道府県別の人口情報を追加
   const addChartCompositions = useCallback(
     async (prefectureName: string) => {
-      setIsLoading(true);
       try {
         const result: Compositions = await // 念の為エスケープ処理入れる
         (
@@ -29,8 +27,6 @@ export const useCompositions = () => {
       } catch (error) {
         console.error(error);
       }
-
-      setIsLoading(false);
     },
     [chartComposition],
   );
@@ -55,5 +51,5 @@ export const useCompositions = () => {
     },
     [chartComposition],
   );
-  return { isLoading, chartComposition, toggleChartComposition };
+  return { chartComposition, toggleChartComposition };
 };
