@@ -3,6 +3,7 @@ import { CheckBox } from '../molecules/CheckBox';
 import { Prefecture } from 'src/types/api/prefectures';
 import { Headline } from '../atoms/Headline';
 import { Section } from '../atoms/Section';
+import { CheckBoxContainer } from '../atoms/CheckBoxContainer';
 
 type Props = {
   prefectures: Prefecture[];
@@ -15,14 +16,16 @@ export const PrefectureSelection = React.memo((props: Props) => {
   return (
     <Section>
       <Headline title="都道府県" />
-      {prefectures.map((prefecture) => (
-        <CheckBox
-          key={prefecture.prefCode}
-          name={prefecture.prefName}
-          checked={prefecture.checked!}
-          onChange={() => onChange(prefecture)}
-        />
-      ))}
+      <CheckBoxContainer>
+        {prefectures.map((prefecture) => (
+          <CheckBox
+            key={prefecture.prefCode}
+            name={prefecture.prefName}
+            checked={prefecture.checked!}
+            onChange={() => onChange(prefecture)}
+          />
+        ))}
+      </CheckBoxContainer>
     </Section>
   );
 });
