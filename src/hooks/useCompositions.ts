@@ -22,9 +22,7 @@ export const useCompositions = () => {
         ).json();
         // データ内の総人口のみをとる
         const composition = result.result.data[0];
-        console.log(composition);
 
-        // setする用のデータを作る
         const createdComposition: chartComposition = {
           prefectureName: prefecture.prefName,
           data: composition,

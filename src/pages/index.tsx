@@ -30,7 +30,6 @@ const Home: NextPage = () => {
     toggleChartComposition(prefecture);
     setPrefCheckBox(prefecture);
   };
-  console.log(chartComposition);
 
   if (isLoading) return <div>ロード中</div>;
 
