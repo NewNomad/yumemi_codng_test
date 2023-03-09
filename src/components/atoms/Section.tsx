@@ -15,6 +15,10 @@ const SSection: React.CSSProperties = {
   margin: '0 auto',
   maxWidth: 768,
   padding: 16,
+  backgroundColor: '#fff',
+  boxShadow: '2px 2px 2px 2px #eee',
+  borderRadius: 10,
+  marginTop: 30,
 };
 
 const mediaQuery = '@media screen and (max-width: 768px)';
