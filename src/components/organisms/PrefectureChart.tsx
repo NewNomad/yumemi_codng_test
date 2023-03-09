@@ -11,6 +11,7 @@ import {
   YAxis,
 } from 'recharts';
 import { chartComposition } from 'src/types/chartComposition';
+import { Section } from '../atoms/Section';
 
 type Props = {
   chartComposition: chartComposition[];
@@ -20,7 +21,7 @@ export const PrefectureChart = (props: Props) => {
   const { chartComposition } = props;
 
   return (
-    <section>
+    <Section>
       <ResponsiveContainer width="80%" height={400}>
         <LineChart margin={{ top: 50, left: 30, right: 30, bottom: 50 }}>
           <CartesianGrid strokeDasharray={3} />
@@ -49,6 +50,6 @@ export const PrefectureChart = (props: Props) => {
           <Tooltip />
         </LineChart>
       </ResponsiveContainer>
-    </section>
+    </Section>
   );
 };
